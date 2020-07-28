@@ -1,31 +1,3 @@
-TCC00289 - COMPILADORES - A12020 / 1º
-Tradução de declarações Imp à Π IR
-Christiano Braga
-•
-8 de jul. Editado às 25 de jul.
-100 pontos
-Data de entrega: 30 de jul.
-1. Baixe o arquivo anexo no seu repositório Git Hub do curso.
-2. Crie o arquivo examples/fibo.imp2 contendo uma implementação iterativa da função de Fibonacci e que calcule Fibonacci de 10.
-3. Atribua valores apropriados às variáveis no arquivo de teste imp2-transf-to-piir-decl-test.py de forma a obter o seguinte ao executá-lo:
-
-$ python3 imp2-transf-to-piir-decl-test.py -v
-test_fibo (__main__.TestImpToPiIRDecl) ... ok
-test_run (__main__.TestImpToPiIRDecl) ... ok
-
-----------------------------------------------------------------------
-Ran 2 tests in 0.966s
-
-OK
-4. Faça um commit e um pull para o seu repositório Git Hub.
-imp2-transf-to-piir-decl-test.allana.py
-Texto
-
-Comentários da turma
-Seus trabalhos
-Atribuído
-Comentários particulares
-
 import unittest
 import tatsu
 from impiler import Impiler
@@ -70,15 +42,15 @@ class TestImpToPiIRDecl(unittest.TestCase):
         # Qual o menor estado que no qual fiboncci n está calculado?
         s = 0
         # Qual o estado do componente locs (BlockLocs) em s?
-        locs = "?"
+        locs = "[]"
         # Qual o estado do componente env (Ambiente) em s?
-        env = "?"
+        env = "{}"
         # Qual o estado do componente sto (Memória) em s?
-        sto = "?"
+        sto = "{}"
         # Qual o estado do componente val (Pilha de valores) em s?
-        val = "?"
+        val = "[[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))))]"
         # Qual o estado do componente cnt (Pilha de controle) em s?
-        cnt = "?"
+        cnt = "['#BLKDEC', DSeq(DSeq(DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), Bind(Id(j), Ref(Num(1)))), Bind(Id(k), Ref(Num(1))))]"
         self.__test_run('examples/fibo.imp2', s, locs, env, sto, val, cnt)
         
 if __name__ == '__main__':
