@@ -1,0 +1,538 @@
+s = 1
+
+locs = []
+
+env = {}
+
+sto = {}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))))]
+
+cnt = "['#BLKDEC', '#DSEQ', DSeq(DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), Bind(Id(j), Ref(Num(1)))), Bind(Id(k), Ref(Num(1)))]"
+
+
+s = 2
+
+locs = []
+
+env = {}
+
+sto = {}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), Id(k)]
+
+cnt = "['#BLKDEC', '#DSEQ', DSeq(DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), Bind(Id(j), Ref(Num(1)))), '#BIND', Ref(Num(1))]"
+
+
+s = 3
+
+locs = []
+
+env = {}
+
+sto = {}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), Id(k)]
+
+cnt = "['#BLKDEC', '#DSEQ', DSeq(DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), Bind(Id(j), Ref(Num(1)))), '#BIND', '#REF', Num(1)]"
+
+s = 4
+
+locs = []
+
+env = {}
+
+sto = {}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), Id(k), 1]
+
+cnt = "['#BLKDEC', '#DSEQ', DSeq(DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), Bind(Id(j), Ref(Num(1)))), '#BIND', '#REF']"
+
+s = 5
+
+locs = []
+
+env = {}
+
+sto = {0: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), Id(k), 0]
+
+cnt = "['#BLKDEC', '#DSEQ', DSeq(DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), Bind(Id(j), Ref(Num(1)))), '#BIND']"
+
+s = 6
+
+locs = [0]
+
+env = {}
+
+sto = {0: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}]
+
+cnt = "['#BLKDEC', '#DSEQ', DSeq(DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), Bind(Id(j), Ref(Num(1))))]"
+
+
+s = 7
+
+locs = [0]
+
+env = {}
+
+sto = {0: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), Bind(Id(j), Ref(Num(1)))]"
+
+s = 8
+
+locs = [0]
+
+env = {}
+
+sto = {0: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, Id(j)]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), '#BIND', Ref(Num(1))]"
+
+
+s = 9
+
+locs = [0]
+
+env = {}
+
+sto = {0: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, Id(j)]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), '#BIND', '#REF', Num(1)]"
+
+
+s = 10
+
+locs = [0]
+
+env = {}
+
+sto = {0: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, Id(j), 1]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), '#BIND', '#REF']"
+
+
+s = 11
+
+locs = [0, 1]
+
+env = {}
+
+sto = {0: 1, 1: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, Id(j), 1]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))), '#BIND']"
+
+s = 12
+
+locs = [0, 1]
+
+env = {}
+
+sto = {0: 1, 1: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', DSeq(Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0))))]"
+
+
+s = 13
+
+locs = [0, 1]
+
+env = {}
+
+sto = {0: 1, 1: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ', Bind(Id(n), Ref(Num(10))), Bind(Id(i), Ref(Num(0)))]"
+
+
+s = 14
+
+locs = [0, 1]
+
+env = {}
+
+sto = {0: 1, 1: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, Id(i)]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ', Bind(Id(n), Ref(Num(10))), '#BIND',  Ref(Num(0))]"
+
+
+s = 15
+
+locs = [0, 1]
+
+env = {}
+
+sto = {0: 1, 1: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, Id(i)]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ', Bind(Id(n), Ref(Num(10))), '#BIND',  '#REF', Num(0)]"
+
+
+s = 16
+
+locs = [0, 1]
+
+env = {}
+
+sto = {0: 1, 1: 1}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, Id(i), 0]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ', Bind(Id(n), Ref(Num(10))), '#BIND',  '#REF']"
+
+
+s = 17
+
+locs = [0, 1, 2]
+
+env = {}
+
+sto = {0: 1, 1: 1, 2: 0}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, Id(i), 2]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ', Bind(Id(n), Ref(Num(10))), '#BIND']"
+
+
+s = 18
+
+locs = [0, 1, 2]
+
+env = {}
+
+sto = {0: 1, 1: 1, 2: 0}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, {'i': 2}]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ', Bind(Id(n), Ref(Num(10)))]"
+
+
+s = 19
+
+locs = [0, 1, 2]
+
+env = {}
+
+sto = {0: 1, 1: 1, 2: 0}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, {'i': 2}, Id(n)]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ', '#BIND', Ref(Num(10))]"
+
+
+s = 20
+
+locs = [0, 1, 2]
+
+env = {}
+
+sto = {0: 1, 1: 1, 2: 0}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, {'i': 2}, Id(n)]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ', '#BIND', '#REF', Num(10)]"
+
+s = 21
+
+locs = [0, 1, 2]
+
+env = {}
+
+sto = {0: 1, 1: 1, 2: 0}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, {'i': 2}, Id(n), 10]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ', '#BIND', '#REF']"
+
+
+s = 22
+
+locs = [0, 1, 2, 3]
+
+env = {}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, {'i': 2}, Id(n), 3]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ', '#BIND']"
+
+
+s = 23
+
+locs = [0, 1, 2, 3]
+
+env = {}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, {'i': 2}, {'n': 3}]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ', '#DSEQ']"
+
+s = 24
+
+locs = [0, 1, 2, 3]
+
+env = {}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1}, {'i': 2, 'n': 3}]
+
+cnt = "['#BLKDEC', '#DSEQ', '#DSEQ']"
+
+
+s = 25
+
+locs = [0, 1, 2, 3]
+
+env = {}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0}, {'j': 1, 'i': 2, 'n': 3}]
+
+cnt = "['#BLKDEC', '#DSEQ']"
+
+s = 26
+
+locs = [0, 1, 2, 3]
+
+env = {}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), {'k': 0, 'j': 1, 'i': 2, 'n': 3}]
+
+cnt = "['#BLKDEC']"
+
+s = 27
+
+locs = [0, 1, 2, 3]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))))]
+
+cnt = "['#BLKDEC']"
+
+s = 28
+
+locs = [0, 1, 2, 3]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))))]"
+
+s = 29
+
+locs = [0, 1, 2, 3]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}, Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))))]
+
+cnt = "['#BLKDEC', "#LOOP', Lt(Id(k), Id(n))]"
+
+s = 30
+
+locs = [0, 1, 2, 3]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}, Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), 10]
+
+cnt = "['#BLKDEC', "#LOOP', '#LT', Id(k)]"
+
+s = 31
+
+locs = [0, 1, 2, 3]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}, Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), 10, 1]
+
+cnt = "['#BLKDEC', "#LOOP', '#LT']"
+
+s = 32
+
+locs = [0, 1, 2, 3]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}, Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), True]
+
+cnt = "['#BLKDEC', "#LOOP']"
+
+s = 33
+
+locs = [0, 1, 2, 3]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))))]"
+
+s = 34
+
+locs = []
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}, [0,1,2,3], {'k': 0, 'j': 1, 'i': 2, 'n': 3}]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))]"
+
+
+s = 35
+
+locs = []
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}, [0,1,2,3], {'k': 0, 'j': 1, 'i': 2, 'n': 3}]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), '#BLKCMD', CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))), Bind(Id(t), Ref(Num(0)))]"
+
+s = 36
+
+locs = []
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}, [0,1,2,3], {'k': 0, 'j': 1, 'i': 2, 'n': 3}, Id(t)]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), '#BLKCMD', CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))), '#BIND', Ref(Num(0))]"
+
+
+s = 37
+
+locs = []
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}, [0,1,2,3], {'k': 0, 'j': 1, 'i': 2, 'n': 3}, Id(t)]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), '#BLKCMD', CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))), '#BIND', '#REF', Num(0)]"
+
+s = 38
+
+locs = []
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10}
+
+val = [[], {}, [0,1,2,3], {'k': 0, 'j': 1, 'i': 2, 'n': 3}, Id(t), 0]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), '#BLKCMD', CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))), '#BIND', '#REF']"
+
+
+s = 39
+
+locs = [4]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10, 4: 0}
+
+val = [[], {}, [0,1,2,3], {'k': 0, 'j': 1, 'i': 2, 'n': 3}, Id(t), 4]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), '#BLKCMD', CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))), '#BIND']"
+
+s = 40
+
+locs = [4]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10, 4: 0}
+
+val = [[], {}, [0,1,2,3], {'k': 0, 'j': 1, 'i': 2, 'n': 3}, {'t: 4 }]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), '#BLKCMD', CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))]"
+
+
+s = 41
+
+locs = [4]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10, 4: 0}
+
+val = [[], {}, [0,1,2,3], {'k': 0, 'j': 1, 'i': 2, 'n': 3}, {'t: 4 }]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), '#BLKCMD', '#CSEQ', CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))))]"
+
+s = 42
+
+locs = [4]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10, 4: 0}
+
+val = [[], {}, [0,1,2,3], {'k': 0, 'j': 1, 'i': 2, 'n': 3}, {'t: 4 }]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), '#BLKCMD', '#CSEQ', '#CSEQ', CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))]"
+
+s = 43
+
+locs = [4]
+
+env = {'k': 0, 'j': 1, 'i': 2, 'n': 3}
+
+sto = {0: 1, 1: 1, 2: 0, 3: 10, 4: 0}
+
+val = [[], {}, [0,1,2,3], {'k': 0, 'j': 1, 'i': 2, 'n': 3}, {'t: 4 }]
+
+cnt = "['#BLKDEC', Loop(Lt(Id(k), Id(n)), Blk(Bind(Id(t), Ref(Num(0))), CSeq(CSeq(CSeq(Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1)))))), '#BLKCMD', '#CSEQ', '#CSEQ', '#CSEQ', Assign(Id(t), Sum(Id(i), Id(j))), Assign(Id(i), Id(j))), Assign(Id(j), Id(t))), Assign(Id(k), Sum(Id(k), Num(1))]"
+
+
