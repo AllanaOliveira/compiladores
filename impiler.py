@@ -49,6 +49,9 @@ class Impiler(object):
     def assign(self, ast):
         return pi.Assign(ast.idn, ast.e)
 
+    def print(self, ast):
+        return pi.Print(ast.e)
+    
     def const(self, ast):
         return pi.Bind(ast.idn, ast.e) 
 
@@ -129,7 +132,11 @@ class Impiler(object):
         body = self.__makeAbs(ast.f, ast.b)
         return pi.BindAbs(ast.idn, body)
 
+    def rec(self, ast):
+        body = self.__makeAbs(ast.f, ast.b)
+        return pi.BindRecAbs(ast.idn, body)
+
     def call(self, ast):
-        actuals = [e for e in ast.a if e != ','] 
+        actuals = [e for e in ast.a if e != ',']
         aux = pi.Call(ast.idn, actuals)
         return aux 
